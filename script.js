@@ -101,9 +101,9 @@
 const someFunction = () => {
 
     //? LOCAL SCOPE - Lives within the method
-    let name = `Billy bob joe`;
+    // let name = `Billy bob joe`;
 
-    console.log(`${name} called from the function`);
+    // console.log(`${name} called from the function`);
 
 }
 
@@ -112,70 +112,70 @@ const someFunction = () => {
 
 //? GLOBAL SCOPE - Visibile to everyone / Use it everywhere / Accessible within the whole file
 
-let hello = `hello world`;
+// let hello = `hello world`;
 
 //? created without a let/const - VAR and hoists to the top of the file
-let variableWithoutDeclaration = "hi";
+// let variableWithoutDeclaration = "hi";
 
 // console.log(variableWithoutDeclaration);
 
-const checkBalance = () => {
-    let balance = 10; 
-}
+// const checkBalance = () => {
+//     let balance = 10; 
+// }
 
 // checkBalance();
 // console.log(balance); // Error cannot SEE balance!
 
 
 
-let check = false; //? <- GLOBAL
+// let check = false; //? <- GLOBAL
 
-const changeCheck = () => {
-    check = true;
-}
+// const changeCheck = () => {
+//     check = true;
+// }
 
-console.log(check); //? <- false
-changeCheck();
-console.log(check); //? <- true
+// console.log(check); //? <- false
+// changeCheck();
+// console.log(check); //? <- true
 
 
 //? We look within before going else where!!!!
 
-console.log(`----------------`);
+// console.log(`----------------`);
 
 
-let flag; // <- GLOBAL VARIABLE
+// let flag; // <- GLOBAL VARIABLE
 
-const test = () => {
-    flag = true; 
-    console.log(flag); // true
-    test1();
-    console.log(flag); // false
-}
+// const test = () => {
+//     flag = true; 
+//     console.log(flag); // true
+//     test1();
+//     console.log(flag); // false
+// }
 
-const test1 = () => {
-    flag = false;
-}
+// const test1 = () => {
+//     flag = false;
+// }
 
-test();
+// test();
 
-console.log("-------------------");
+// console.log("-------------------");
 
-let x; //? TRUE GLOBAL 
+// let x; //? TRUE GLOBAL 
 
-const anotherOne = () => {
-    x = true; //? <- 
-    console.log(x); //? TRUE
-    theNextMethod();
-    console.log(x); //? Uses Global becuase it can't access the local variable in theNextMethod();
-}
+// const anotherOne = () => {
+//     x = true; //? <- 
+//     console.log(x); //? TRUE
+//     theNextMethod();
+//     console.log(x); //? Uses Global becuase it can't access the local variable in theNextMethod();
+// }
 
-const theNextMethod = () => {
-    let x = false; //? LOCAL VARIABLE
-    return;
-}
+// const theNextMethod = () => {
+//     let x = false; //? LOCAL VARIABLE
+//     return;
+// }
 
-anotherOne();
+// anotherOne();
 
 //? True true x2
 
@@ -191,12 +191,45 @@ anotherOne();
 //         Try to access both variables and asses your output
 
 
-function aliG(){
-      let a = "fu";
-      if (a = "fu") {
-          let b = "bu";
-      }
-      console.log(a);
-      console.log(b);
+// function aliG(){
+//       let a = "fu";
+//       let b = "bu"; // needed to declare b locally as a variable to get it      working
+//       if (a = "fu") {
+//           let b = "bu";
+//       }
+//       console.log(a);
+//       console.log(b);
+//     }
+// aliG();
+
+// create the above as an arrow function
+
+const aliG = () => {
+    let a = "fu";
+    let b = "bu"; // <- this is the line which fixes it and lets shit work due to b now being declared as a variable within the scope of the method 
+    if (a == "fu"){
+        let b = "bu";
     }
+    console.log(a);
+    console.log(b);
+}
+
 aliG();
+
+// this does soemthing now, it doesn't return b tho.  b needs to be set as a local variable maybe?
+
+// TOP TIP - READ THE QUESTION PROPERLY!!!!
+
+
+// EXERCISE 2
+// What is the result of executing this code and why?
+
+function doSomething() {
+  let a = 1;
+  console.log(a);
+  console.log(foo());
+  function foo() {
+    return 2;
+  }
+}
+doSomething();
