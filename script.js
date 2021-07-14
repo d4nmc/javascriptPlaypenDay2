@@ -98,7 +98,7 @@
 
 //* SCOPE = Visibility of a VARIABLE in a file
 
-const someFunction = () => {
+//  const someFunction = () => {
 
     //? LOCAL SCOPE - Lives within the method
     // let name = `Billy bob joe`;
