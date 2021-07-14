@@ -70,6 +70,7 @@
   
 // EXERCISE 3    
 // Create an arrow function called powerUp that takes in two values n1 and n2. The arrow function will return the power of the two numbers.
+// need to look an import SAVS solution
 
 //    e.g.
     
@@ -85,3 +86,14 @@
 
 //     console.log(powerUp(-3,3));
 
+// SCOPE
+
+        // Scope defines how variables can be seen / accessed
+        // Use the let keyword to specify scope to the current block
+        // If you don't use let then the variable has global scope
+        // Unless you declare a variable in a function or block it is of global scope
+        // Scope chains define how an identifier is looked up - start from the inside and work out
+        //     Check if there is a local variable IF NOT then check if there is a global variable
+        // If there is no local or global variable then one is added to the global scope!
+
+        
