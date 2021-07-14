@@ -50,8 +50,12 @@ console.log (subT(50,10));
 // Create a function expression called welcome that take in name, age,gender as a parameters. The outcome should be like so:
 // e.g. "My name is Felix Cited, i am 20 years old and of gender Male"
 
+
 const welcome = function(name,age,gender){
     return console.log(`My name is ${name}, I am ${age} years old and I identify as a ${gender}`);
+    
     }
-   
+
     welcome("Dwayne Johnson",48,"Rock");
+   
+   
